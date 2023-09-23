@@ -1,14 +1,15 @@
 import csv
 from model.Note import *
+from datetime import date
 
-FILE_PATH = notes.csv
+FILE_PATH = 'Notes/notes.csv'
 
 def save (new_note) :
     note_id = generate_id()
     
     with open(FILE_PATH, 'a', newline='') as csvnote:
         parameters = ['id', 'title', 'body', 'date']
-        writer = csv.DictWriter(csvnote, parameters = parameters)
+        writer = csv.DictWriter(csvnote, fieldnames= parameters)
         
         if csvnote.tell() == 0:
             writer.writeheader() 
@@ -47,7 +48,7 @@ def edit (note_id, new_note) :
                 row['title'], row['body'], row['date'] = new_note.title, new_note.body, date.today()
     with open(FILE_PATH, 'w', newline='', encoding='utf-8') as csvnote :
         parameters = ['id', 'title', 'body', 'date']
-        writer = csv.DictWriter(csvnote, parameters = parameters)
+        writer = csv.DictWriter(csvnote, fieldnames= parameters)
         writer.writeheader() 
         writer.writerows(notes)
         
@@ -59,7 +60,7 @@ def delete (note_id) :
         
         with open(FILE_PATH, 'w', newline='', encoding='utf-8') as csvnote :
             parameters = ['id', 'title', 'body', 'date']
-            writer = csv.DictWriter(csvnote, parameters = parameters)
+            writer = csv.DictWriter(csvnote, fieldnames= parameters)
             writer.writeheader() 
             writer.writerows(notes)
     except Exception as e :

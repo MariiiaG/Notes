@@ -1,3 +1,5 @@
+from datetime import date
+
 class Note :
     def __init__(self, title, body, id = None, date = None) :
         self.id = id

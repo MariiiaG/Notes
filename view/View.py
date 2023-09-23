@@ -10,7 +10,7 @@ def menu() -> int:
         print(error_msg)
         
 def new_entry (msg = None) :
-    if msg != None:
+    if msg != None :
         print_msg ("Please enter your note : " +  msg)
         title = input("Note title : ")
         body = input()
@@ -18,10 +18,8 @@ def new_entry (msg = None) :
         return note
     
 def print_msg (msg : str):
-    length = len (msg)
-    print ('\n' + '~' * length)
     print (msg)
-    print ('~' * length + '\n')
+
     
 def find_by_id (msg = None):
     print_msg ("Enter note id : " + msg)

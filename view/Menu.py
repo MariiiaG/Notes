@@ -3,6 +3,7 @@ main_menu = '''Enter 1 - 4 to select :
     2. Change note
     3. Find note
     4. Delete note
+    5. Exit
     '''
     
 menu_selection = "Selected : "
