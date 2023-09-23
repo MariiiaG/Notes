@@ -14,8 +14,8 @@ def save (new_note) :
         if csvnote.tell() == 0:
             writer.writeheader() 
             
-            new_note.id, new_note.date = note_id, date.today()
-            writer.writerow({'id' : new_note.id, 'title' : new_note.title, 'body' : new_note.body, 'date' : new_note.date})
+        new_note.id, new_note.date = note_id, date.today()
+        writer.writerow({'id' : new_note.id, 'title' : new_note.title, 'body' : new_note.body, 'date' : new_note.date})
             
 def  generate_id () :
     try :
